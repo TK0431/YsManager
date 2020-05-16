@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HIKFJWfGHsC0FxADE8u9Xt5ThJ+QgGc/34GHz8M97UPOxQIQw5F8mUmK+ceZ4FyxAiU2hEvyjnB0a4H7nT040w==",
+  "success": true,
+  "projectFilePath": "E:\\GitHub\\YsTool\\YsTool\\YsTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dhc\\.nuget\\packages\\materialdesigncolors\\1.2.4\\materialdesigncolors.1.2.4.nupkg.sha512",
+    "C:\\Users\\dhc\\.nuget\\packages\\materialdesignthemes\\3.1.1\\materialdesignthemes.3.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
