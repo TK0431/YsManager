@@ -13,8 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AppAnalyse">
+      d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -35,56 +34,58 @@
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     materialDesign:TextFieldAssist.HasOutlinedTextField="True"
                     materialDesign:TextFieldAssist.TextFieldCornerRadius="4"/>
-                <TreeView Grid.Row="1" Margin="0 8">
-                    <TreeViewItem Header="Fruit">
-                        <TreeViewItem>
-                            <TreeViewItem.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Radioactive" />
-                                    <TextBlock Margin="8 0 0 0">Apple</TextBlock>
-                                </StackPanel>
-                            </TreeViewItem.Header>
-                        </TreeViewItem>
-                        <TreeViewItem Header="Banana" />
-                        <TreeViewItem Header="Grape">
-                            <TextBlock>
+                <ScrollViewer materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True" Margin="0 8">
+                    <TreeView>
+                        <TreeViewItem Header="Fruit">
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Radioactive" />
+                                        <TextBlock Margin="8 0 0 0">Apple</TextBlock>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Banana" />
+                            <TreeViewItem Header="Grape">
+                                <TextBlock>
                             <Run Text="Grapes for us" />
-                            </TextBlock>
+                                </TextBlock>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Peach" />
+                            <TreeViewItem Header="Pear" />
+                            <TreeViewItem Header="Strawberry" />
                         </TreeViewItem>
-                        <TreeViewItem Header="Peach" />
-                        <TreeViewItem Header="Pear" />
-                        <TreeViewItem Header="Strawberry" />
-                    </TreeViewItem>
-                    <TreeViewItem Header="OS" IsExpanded="True">
-                        <TreeViewItem Header="Amiga" />
-                        <TreeViewItem>
-                            <TreeViewItem.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="RadioTower" />
-                                    <TextBlock Margin="8 0 0 0">Android</TextBlock>
-                                </StackPanel>
-                            </TreeViewItem.Header>
+                        <TreeViewItem Header="OS" IsExpanded="True">
+                            <TreeViewItem Header="Amiga" />
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="RadioTower" />
+                                        <TextBlock Margin="8 0 0 0">Android</TextBlock>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                            <TreeViewItem Header="iOS" />
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Recycle" />
+                                        <TextBlock Margin="8 0 0 0">Linux</TextBlock>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="RadioboxMarked" />
+                                        <TextBlock Margin="8 0 0 0">Windows</TextBlock>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
                         </TreeViewItem>
-                        <TreeViewItem Header="iOS" />
-                        <TreeViewItem>
-                            <TreeViewItem.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Recycle" />
-                                    <TextBlock Margin="8 0 0 0">Linux</TextBlock>
-                                </StackPanel>
-                            </TreeViewItem.Header>
-                        </TreeViewItem>
-                        <TreeViewItem>
-                            <TreeViewItem.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="RadioboxMarked" />
-                                    <TextBlock Margin="8 0 0 0">Windows</TextBlock>
-                                </StackPanel>
-                            </TreeViewItem.Header>
-                        </TreeViewItem>
-                    </TreeViewItem>
-                    <TreeViewItem Header="Empty" />
-                </TreeView>
+                        <TreeViewItem Header="Empty" />
+                    </TreeView>
+                </ScrollViewer>
             </DockPanel>
         </GroupBox>
         <GroupBox Grid.Column="1" Header="Control Info" Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16" Width="300">

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Kebin1.Utils;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using YsTool.Pages;
+using YsTool.ViewModels;
 
 namespace YsTool
 {
@@ -20,14 +10,45 @@ namespace YsTool
     /// </summary>
     public partial class MainWindow
     {
+        private MainWindowViewModel _viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _viewModel = new MainWindowViewModel();
+            this.DataContext = _viewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PageItem selected = this.MenuListBox.SelectedItem as PageItem;
+            if (selected != null)
+            {
+                switch (selected.Code)
+                {
+                    case PageEnum.MAIN:
+                        _viewModel.MainPage = new Main();
+                        break;
+                    case PageEnum.ANALY:
+                        _viewModel.MainPage = new AppAnalyse();
+                        break;
+                    case PageEnum.GROUP:
+                        _viewModel.MainPage = new Group();
+                        break;
+                    case PageEnum.USER:
+                        _viewModel.MainPage = new User();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            MenuToggleButton.IsChecked = false;
         }
     }
 }

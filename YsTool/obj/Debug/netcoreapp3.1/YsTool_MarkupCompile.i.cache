@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\GitHub\YsTool\YsTool\obj\Debug\netcoreapp3.1\
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\
 YsTool
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-E:\GitHub\YsTool\YsTool\App.xaml
-4925368195
+E:\GitHub\YsManager\YsTool\App.xaml
+629459642
 
-7-695746261
-1941681252841
-MainWindow.xaml;Pages\AppAnalyse.xaml;Pages\Group.xaml;Pages\User.xaml;
+14-1048620646
+1951630702396
+MainWindow.xaml;Pages\AppAnalyse.xaml;Pages\AppTest.xaml;Pages\Group.xaml;Pages\Main.xaml;Pages\User.xaml;
 
 True
 

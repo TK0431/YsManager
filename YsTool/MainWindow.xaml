@@ -13,14 +13,16 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="900"
         WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
-
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="70" ResizeBorderThickness="0"/>
+    </WindowChrome.WindowChrome>
     <materialDesign:DialogHost>
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
             <materialDesign:DrawerHost.LeftDrawerContent>
-                <DockPanel MinWidth="220">
-                    <ToggleButton 
+                <DockPanel MinWidth="220" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <ToggleButton
                         Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                         DockPanel.Dock="Top"
                         HorizontalAlignment="Right" 
@@ -37,43 +39,48 @@
                         materialDesign:TextFieldAssist.HasOutlinedTextField="True"
                         materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
                         materialDesign:TextFieldAssist.TextFieldCornerRadius="4"/>
-                    <ListBox></ListBox>
+                    <ListBox Margin="16"
+                         x:Name="MenuListBox"
+                        SelectedItem="{Binding SelectedItem}"
+                        ItemsSource="{Binding ListItems}"
+                        PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
+                        <ListBox.Resources>
+                            <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                        </ListBox.Resources>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate >
+                                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <DockPanel>
-                <materialDesign:ColorZone Padding="16" Mode="PrimaryMid" DockPanel.Dock="Top">
+                <materialDesign:ColorZone Padding="16" Mode="PrimaryMid" DockPanel.Dock="Top" Height="70">
                     <!-- Head -->
                     <DockPanel>
                         <!-- Left Button -->
-                        <ToggleButton x:Name="MenuToggleButton" Style="{StaticResource MaterialDesignHamburgerToggleButton}"/>
+                        <ToggleButton x:Name="MenuToggleButton" Style="{StaticResource MaterialDesignHamburgerToggleButton}" WindowChrome.IsHitTestVisibleInChrome="True"/>
                         <!-- Right Button -->
-                        <materialDesign:Badged DockPanel.Dock="Right" Badge="3">
-                            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges">
-                            <StackPanel>
-                                <Button Content="Info"/>
-                                <Separator/>
-                                <Button Content="UserInfo"/>
-                                <Separator/>
-                                <Button Content="Close" Click="Button_Click"/>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
+                        <materialDesign:Badged DockPanel.Dock="Right" Badge="3" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True">
+                            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" VerticalAlignment="Center">
+                                <StackPanel>
+                                    <Button Content="Info"/>
+                                    <Separator/>
+                                    <Button Content="UserInfo"/>
+                                    <Separator/>
+                                    <Button Content="Close" Click="Button_Click"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
                         </materialDesign:Badged>
                         <!-- Title -->
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Project Management</TextBlock>
                     </DockPanel>
                 </materialDesign:ColorZone>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <ScrollViewer Grid.Row="1" materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
-                        <ContentControl/>
-                    </ScrollViewer>
-
-                    <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar" Grid.Row="1" />
-                </Grid>
+                <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" DockPanel.Dock="Bottom" />
+                <!--<ScrollViewer materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">-->
+                    <Frame Content="{Binding MainPage}" NavigationUIVisibility="Hidden"/>
+                <!--</ScrollViewer>-->
             </DockPanel>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>

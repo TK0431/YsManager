@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\YsTool\\YsTool\\YsTool.csproj": {}
+    "E:\\GitHub\\YsManager\\YsTool\\YsTool.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\YsTool\\YsTool\\YsTool.csproj": {
+    "E:\\GitHub\\YsManager\\YsTool\\YsTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\YsTool\\YsTool\\YsTool.csproj",
+        "projectUniqueName": "E:\\GitHub\\YsManager\\YsTool\\YsTool.csproj",
         "projectName": "YsTool",
-        "projectPath": "E:\\GitHub\\YsTool\\YsTool\\YsTool.csproj",
+        "projectPath": "E:\\GitHub\\YsManager\\YsTool\\YsTool.csproj",
         "packagesPath": "C:\\Users\\dhc\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\YsTool\\YsTool\\obj\\",
+        "outputPath": "E:\\GitHub\\YsManager\\YsTool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dhc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.2.8, )"
             }
           },
           "imports": [
