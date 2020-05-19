@@ -60,3 +60,4 @@ E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\Main.baml
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.csproj.Fody.CopyLocal.cache
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\AppTest.g.cs
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\AppTest.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Styles\Com.baml
