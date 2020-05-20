@@ -61,3 +61,10 @@ E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.csproj.Fody.CopyLocal.
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\AppTest.g.cs
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\AppTest.baml
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Styles\Com.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Styles\en-us.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\Wbs.g.cs
+E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\setting.xml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\Wbs.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Styles\zh-cn.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.Properties.Resources.resources
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.csproj.GenerateResource.cache

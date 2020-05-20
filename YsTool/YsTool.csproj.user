@@ -51,5 +51,11 @@
     <Page Update="Styles\Com.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\zh-cn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\en-us.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

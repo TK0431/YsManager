@@ -1,4 +1,5 @@
-﻿using PropertyChanged;
+﻿using Kebin1.Utils;
+using PropertyChanged;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -8,6 +9,11 @@ namespace YsTool.ViewModels.Base
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// 语言
+        /// </summary>
+        public LanguageEnum Language { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

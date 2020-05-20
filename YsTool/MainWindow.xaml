@@ -74,7 +74,7 @@
                             </materialDesign:PopupBox>
                         </materialDesign:Badged>
                         <!-- Title -->
-                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Project Manager</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Text="{StaticResource mainTitle}"/>
                     </DockPanel>    
                 </materialDesign:ColorZone>
                 <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" DockPanel.Dock="Bottom" />

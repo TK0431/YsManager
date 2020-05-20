@@ -10,7 +10,7 @@ using System.Xml.Linq;
 namespace Kebin1.Utils
 {
     /// <summary>
-    /// 画面コード
+    /// 画面
     /// </summary>
     public enum PageEnum
     {
@@ -22,6 +22,19 @@ namespace Kebin1.Utils
         GROUP,
         [Description("AppAnalyse"), PageUrl("Page/AppAnalyse.xaml")]
         ANALY,
+    }
+
+    /// <summary>
+    /// 语言
+    /// </summary>
+    public enum LanguageEnum
+    {
+        [Description("英语")]
+        ENG,
+        [Description("中文")]
+        CNS,
+        [Description("日语")]
+        JAP,
     }
 
     /// <summary>
@@ -72,6 +85,8 @@ namespace Kebin1.Utils
         [DBValue("1"), Description("分割案件")]
         CODE_1,
     }
+
+
 
     /// <summary>
     /// Enum
