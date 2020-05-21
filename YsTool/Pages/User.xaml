@@ -123,9 +123,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="File Input" Margin="0 0 4 0"/>
-                <Button Content="File Output" Grid.Column="1" Margin="4 0 0 0"/>
+                <Button Content="File Replace" Margin="0 0 4 0"/>
+                <Button Content="File Add Input" Margin="0 0 4 0" Grid.Column="1"/>
+                <Button Content="File Output" Grid.Column="2" Margin="4 0 0 0"/>
             </Grid>
         </Grid>
     </DockPanel>

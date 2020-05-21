@@ -16,6 +16,12 @@
       d:DesignHeight="700" d:DesignWidth="1000"
       Title="Wbs">
     <Grid>
-
+        <DataGrid
+          Margin="0 8 0 0"
+          ItemsSource="{Binding Items3}"
+          CanUserSortColumns="True"
+          CanUserAddRows="False"
+          materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+          materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" />
     </Grid>
 </Page>
