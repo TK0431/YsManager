@@ -1,5 +1,7 @@
-﻿using Kebin1.Utils;
+﻿using FrameWork.Models;
+using Kebin1.Utils;
 using System.Windows;
+using YsTool.Consts;
 using YsTool.Pages;
 using YsTool.ViewModels;
 
@@ -27,27 +29,29 @@ namespace YsTool
 
         private void MenuList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            PageItem selected = this.MenuListBox.SelectedItem as PageItem;
+            EnumItem selected = this.MenuListBox.SelectedItem as EnumItem;
+
             if (selected != null)
             {
-                switch (selected.Code)
+                switch ((PageEnum)selected.Index)
                 {
-                    case PageEnum.MAIN:
+                    case PageEnum.UI000:
                         _viewModel.MainPage = new Main();
                         break;
-                    case PageEnum.ANALY:
+                    case PageEnum.UI001:
                         _viewModel.MainPage = new AppAnalyse();
                         break;
-                    case PageEnum.GROUP:
+                    case PageEnum.UI002:
                         _viewModel.MainPage = new Group();
                         break;
-                    case PageEnum.USER:
+                    case PageEnum.UI003:
                         _viewModel.MainPage = new User();
                         break;
                     default:
                         break;
                 }
             }
+
             MenuToggleButton.IsChecked = false;
         }
     }

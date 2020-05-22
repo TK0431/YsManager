@@ -49,7 +49,7 @@
                         </ListBox.Resources>
                         <ListBox.ItemTemplate>
                             <DataTemplate >
-                                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
+                                <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

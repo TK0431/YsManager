@@ -11,7 +11,7 @@ namespace Kebin1.Utils
         /// <param name="e"></param>
         public static void WriteError(object text, Exception e)
         {
-            ILog log = LogManager.GetLogger("異常ログ");
+            ILog log = LogManager.GetLogger("異常ログ", text.GetType());
             log.Error(text, e);
         }
 
@@ -21,7 +21,7 @@ namespace Kebin1.Utils
         /// <param name="text"></param>
         public static void WriteDebug(object text)
         {
-            ILog log = LogManager.GetLogger("デバッグログ");
+            ILog log = LogManager.GetLogger("デバッグログ", text.GetType());
             log.Debug(text);
         }
 
@@ -31,7 +31,7 @@ namespace Kebin1.Utils
         /// <param name="text"></param>
         public static void WarnInfo(object text)
         {
-            ILog log = LogManager.GetLogger("警告ログ");
+            ILog log = LogManager.GetLogger("警告ログ", text.GetType());
             log.Warn(text);
         }
 
@@ -41,7 +41,7 @@ namespace Kebin1.Utils
         /// <param name="text"></param>
         public static void WriteInfo(object text)
         {
-            ILog log = LogManager.GetLogger("正常ログ");
+            ILog log = LogManager.GetLogger("正常ログ", text.GetType());
             log.Info(text);
         }
     }

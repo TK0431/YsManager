@@ -3,6 +3,7 @@ using PropertyChanged;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using YsTool.Consts;
 
 namespace YsTool.ViewModels.Base
 {
