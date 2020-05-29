@@ -1,8 +1,14 @@
 ﻿using FrameWork.Models;
-using Kebin1.Utils;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
+using System.Xml.Linq;
 using YsTool.Consts;
 using YsTool.Pages;
+using YsTool.Utility;
 using YsTool.ViewModels;
 
 namespace YsTool
@@ -22,6 +28,15 @@ namespace YsTool
             this.DataContext = _viewModel;
         }
 
+        /// <summary>
+        /// 初期化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -29,29 +44,44 @@ namespace YsTool
 
         private void MenuList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            EnumItem selected = this.MenuListBox.SelectedItem as EnumItem;
+            EnumItem selected = ((ListBox)sender).SelectedItem as EnumItem;
 
             if (selected != null)
             {
                 switch ((PageEnum)selected.Index)
                 {
                     case PageEnum.UI000:
-                        _viewModel.MainPage = new Main();
+                        _viewModel.MainPage = new UI000();
                         break;
                     case PageEnum.UI001:
-                        _viewModel.MainPage = new AppAnalyse();
+                        _viewModel.MainPage = new UI001();
                         break;
                     case PageEnum.UI002:
-                        _viewModel.MainPage = new Group();
+                        _viewModel.MainPage = new UI002();
                         break;
                     case PageEnum.UI003:
-                        _viewModel.MainPage = new User();
+                        _viewModel.MainPage = new UI003();
+                        break;
+                    case PageEnum.UI101:
+                        _viewModel.MainPage = new UI101();
+                        break;
+                    case PageEnum.UI102:
+                        _viewModel.MainPage = new UI102();
+                        break;
+                    case PageEnum.UI201:
+                        _viewModel.MainPage = new UI201();
+                        break;
+                    case PageEnum.UI202:
+                        _viewModel.MainPage = new UI202();
                         break;
                     default:
                         break;
                 }
             }
 
+            expWbs.IsExpanded = false;
+            expApp.IsExpanded = false;
+            expWeb.IsExpanded = false;
             MenuToggleButton.IsChecked = false;
         }
     }

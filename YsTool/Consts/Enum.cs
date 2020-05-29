@@ -1,15 +1,5 @@
-﻿using FrameWork;
-using FrameWork.Consts;
-using FrameWork.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using FrameWork.Consts;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection;
-using System.Xml.Linq;
-using YsTool.Models;
 
 namespace YsTool.Consts
 {
@@ -18,14 +8,22 @@ namespace YsTool.Consts
     /// </summary>
     public enum PageEnum
     {
-        [Description("Main"), Value("Page/AppAnalyse.xaml")]
+        [Description("Main"),Value("Pages/UI000.xaml")]
         UI000,
-        [Description("User"), Value("Page/User.xaml")]
+        [Description("WBS"), Value("Pages/UI001.xaml")]
         UI001,
-        [Description("Group"), Value("Page/Group.xaml")]
+        [Description("User"), Value("Pages/UI002.xaml")]
         UI002,
-        [Description("AppAnalyse"), Value("Page/AppAnalyse.xaml")]
+        [Description("Group"), Value("Pages/UI003.xaml")]
         UI003,
+        [Description("App Analyse"), Value("Pages/UI101.xaml")]
+        UI101,
+        [Description("App Test"), Value("Pages/UI102.xaml")]
+        UI102,
+        [Description("Web Analyse"), Value("Pages/UI201.xaml")]
+        UI201,
+        [Description("Web Test"), Value("Pages/UI202.xaml")]
+        UI202,
     }
 
     /// <summary>

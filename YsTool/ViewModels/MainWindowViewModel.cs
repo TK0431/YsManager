@@ -1,30 +1,62 @@
 ﻿using FrameWork.Utility;
 using FrameWork.Models;
-using Kebin1.Utils;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Security.Permissions;
-using System.Text;
 using System.Windows.Controls;
 using YsTool.Consts;
-using YsTool.Models;
 using YsTool.Pages;
 using YsTool.ViewModels.Base;
 
 namespace YsTool.ViewModels
 {
+    /// <summary>
+    /// 主画面
+    /// </summary>
     public class MainWindowViewModel : BaseViewModel
     {
-        public Page MainPage { get; set; } = new Group();
+        /// <summary>
+        /// 主Page
+        /// </summary>
+        public Page MainPage { get; set; } = new UI003();
 
-        public EnumItem SelectedItem { get; set; }
+        /// <summary>
+        /// Wbs 菜单
+        /// </summary>
+        public ObservableCollection<EnumItem> WbsItems { get; set; }
 
-        public ObservableCollection<EnumItem> ListItems { get; set; } = new ObservableCollection<EnumItem>(typeof(PageEnum).GetList());
+        /// <summary>
+        /// App 菜单
+        /// </summary>
+        public ObservableCollection<EnumItem> AppItems { get; set; }
 
+        /// <summary>
+        /// Web 菜单
+        /// </summary>
+        public ObservableCollection<EnumItem> WebItems { get; set; }
+
+        /// <summary>
+        /// 构造
+        /// </summary>
         public MainWindowViewModel()
         {
-
+            // Wbs 菜单
+            WbsItems = new ObservableCollection<EnumItem>()
+            {
+                PageEnum.UI001.GetItem(), // 
+                PageEnum.UI002.GetItem(), //
+                PageEnum.UI003.GetItem(), //
+            };
+            // App 菜单
+            AppItems = new ObservableCollection<EnumItem>()
+            {
+                PageEnum.UI101.GetItem(), //
+                PageEnum.UI102.GetItem(), //
+            };
+            // Web 菜单
+            WebItems = new ObservableCollection<EnumItem>()
+            {
+                PageEnum.UI201.GetItem(), //
+                PageEnum.UI202.GetItem(), //
+            };
         }
     }
 }

@@ -69,6 +69,7 @@ namespace FrameWork.Utility
         public static EnumItem GetItem<T>(this T code) where T : Enum
             => new EnumItem()
             {
+                Index = Convert.ToInt32(code),
                 Description = code.GetDescription(),
                 Value = code.GetValue(),
             };

@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="EPPlus" Version="5.1.2" />
-    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="MaterialDesignThemes" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="83.0.4103.3900" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\UI201.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\UI202.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -42,9 +52,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\UI201.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UI202.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\zh-cn.xaml">
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

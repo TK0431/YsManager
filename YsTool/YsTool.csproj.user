@@ -7,22 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\AppAnalyse.xaml.cs">
+    <Compile Update="Pages\UI101.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\AppTest.xaml.cs">
+    <Compile Update="Pages\UI102.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Group.xaml.cs">
+    <Compile Update="Pages\UI003.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Main.xaml.cs">
+    <Compile Update="Pages\UI000.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\User.xaml.cs">
+    <Compile Update="Pages\UI002.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Wbs.xaml.cs">
+    <Compile Update="Pages\UI001.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,22 +30,28 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\AppAnalyse.xaml">
+    <Page Update="Pages\UI201.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\AppTest.xaml">
+    <Page Update="Pages\UI202.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Group.xaml">
+    <Page Update="Pages\UI101.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Main.xaml">
+    <Page Update="Pages\UI102.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\User.xaml">
+    <Page Update="Pages\UI003.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Wbs.xaml">
+    <Page Update="Pages\UI000.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UI002.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UI001.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Com.xaml">

@@ -14,14 +14,15 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource All}"
         Title="MainWindow" Height="800" Width="1100"
-        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Loaded="Window_Loaded">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="70" ResizeBorderThickness="0"/>
     </WindowChrome.WindowChrome>
     <materialDesign:DialogHost>
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
             <materialDesign:DrawerHost.LeftDrawerContent>
-                <DockPanel MinWidth="220" WindowChrome.IsHitTestVisibleInChrome="True">
+                <DockPanel x:Name="menuDock" MinWidth="220" WindowChrome.IsHitTestVisibleInChrome="True">
                     <ToggleButton
                         Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                         DockPanel.Dock="Top"
@@ -39,20 +40,43 @@
                         materialDesign:TextFieldAssist.HasOutlinedTextField="True"
                         materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
                         materialDesign:TextFieldAssist.TextFieldCornerRadius="4"/>
-                    <ListBox Margin="16"
-                         x:Name="MenuListBox"
-                        SelectedItem="{Binding SelectedItem}"
-                        ItemsSource="{Binding ListItems}"
-                        PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
-                        <ListBox.Resources>
-                            <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
-                        </ListBox.Resources>
-                        <ListBox.ItemTemplate>
-                            <DataTemplate >
-                                <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                    <Expander x:Name="expWbs" HorizontalAlignment="Stretch" Header="Wbs" DockPanel.Dock="Top">
+                        <ListBox Margin="16" ItemsSource="{Binding WbsItems}" PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
+                            <ListBox.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                            </ListBox.Resources>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Expander>
+                    <Expander x:Name="expApp" HorizontalAlignment="Stretch" Header="App" DockPanel.Dock="Top">
+                        <ListBox Margin="16" ItemsSource="{Binding AppItems}" PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
+                            <ListBox.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                            </ListBox.Resources>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Expander>
+                    <Expander x:Name="expWeb" HorizontalAlignment="Stretch" Header="Web" DockPanel.Dock="Top">
+                        <ListBox Margin="16" ItemsSource="{Binding WebItems}" PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
+                            <ListBox.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                            </ListBox.Resources>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Expander>
+                    <Grid/>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <DockPanel>
@@ -75,11 +99,11 @@
                         </materialDesign:Badged>
                         <!-- Title -->
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Text="{StaticResource mainTitle}"/>
-                    </DockPanel>    
+                    </DockPanel>
                 </materialDesign:ColorZone>
                 <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" DockPanel.Dock="Bottom" />
                 <!--<ScrollViewer materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">-->
-                    <Frame Content="{Binding MainPage}" NavigationUIVisibility="Hidden"/>
+                <Frame Content="{Binding MainPage}" NavigationUIVisibility="Hidden"/>
                 <!--</ScrollViewer>-->
             </DockPanel>
         </materialDesign:DrawerHost>

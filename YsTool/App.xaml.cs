@@ -1,10 +1,15 @@
-﻿using System;
+﻿using FrameWork.Models;
+using Kebin1.Utils;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using YsTool.Utility;
 
 namespace YsTool
 {
@@ -20,6 +25,12 @@ namespace YsTool
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            //DbContextOptions contextOptions = new DbContextOptionsBuilder().UseMySQL("Server=127.0.0.1;database=ysdb;uid=root;password=123456").Options;
+
+            //IServiceCollection services = new ServiceCollection().AddSingleton(contextOptions).AddScoped<EFCoreDbContext>();
+
+            //services.BuildServiceProvider();
+
             Language = string.Empty;
             try
             {
