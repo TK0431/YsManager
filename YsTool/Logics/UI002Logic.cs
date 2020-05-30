@@ -1,16 +1,35 @@
 ﻿using FrameWork.Models;
 using FrameWork.Models.DB;
+using FrameWork.Utility;
 using Kebin1.Utils;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Net;
 using System.Text;
 using YsTool.ViewModels;
 
 namespace YsTool.Logics
 {
-    public class UI002Logic: BaseLogic
+    public class UI002Logic : BaseLogic
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        public void GetUsers(UI002ViewModel model)
+        {
+            using (EntityDao db = new EntityDao())
+            {
+                model.Items = new ObservableCollection<UI002Item>(db.FindAll< UI002Item>("select Cd,Name,GroupId as 'Group',IP,'0' as 'Delete' from tb_user"));
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
         public void FileReplace(UI002ViewModel model)
         {
             string file = FileDialog();
@@ -40,10 +59,28 @@ namespace YsTool.Logics
                 addList.Add(tb);
             }
 
-            using (EFCoreDbContext db = new EFCoreDbContext())
+            using (EntityDao db = new EntityDao())
             {
-                db.TB_User.AddRange(addList);
-                db.SaveChanges();
+                db.Add(addList);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        public void GetIP(UI002ViewModel model)
+        {
+            // 
+            IPAddress address = ComUtility.GetLocalIPV4();
+
+            // 
+            if (address != null)
+            {
+                model.IP1 = address.GetAddressBytes()[0];
+                model.IP2 = address.GetAddressBytes()[1];
+                model.IP3 = address.GetAddressBytes()[2];
+                model.IP4 = address.GetAddressBytes()[3];
             }
         }
     }

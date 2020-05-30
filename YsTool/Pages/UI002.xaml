@@ -29,10 +29,10 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{DynamicResource MaterialDesignToolButton}">
+                                <Button Command="{Binding BtnSearch}" CommandParameter="{Binding Path=.}" Style="{DynamicResource MaterialDesignToolButton}">
                                     <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                                 </Button>
-                                <TextBox Grid.Column="1" Margin="8 0 0 0" 
+                                <TextBox Grid.Column="1" Margin="8 0 0 0" Text="{Binding Search}"
                                          materialDesign:HintAssist.Hint="Search"
                                          materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                          materialDesign:TextFieldAssist.HasClearButton="True"
@@ -43,7 +43,7 @@
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
             <DockPanel>
-                <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" Margin="0 0 8 8" DockPanel.Dock="Top">
+                <TextBox Text="{Binding Cd}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" Margin="0 0 8 8" DockPanel.Dock="Top">
                     <materialDesign:HintAssist.Hint>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BarcodeScan" />
@@ -51,7 +51,7 @@
                         </StackPanel>
                     </materialDesign:HintAssist.Hint>
                 </TextBox>
-                <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" Margin="0 0 8 8" DockPanel.Dock="Top">
+                <TextBox Text="{Binding Name}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" Margin="0 0 8 8" DockPanel.Dock="Top">
                     <materialDesign:HintAssist.Hint>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="RenameBox" />
@@ -60,7 +60,7 @@
                     </materialDesign:HintAssist.Hint>
                 </TextBox>
                 <DockPanel Margin="0 0 8 8" DockPanel.Dock="Top">
-                    <Button Content="{materialDesign:PackIcon IpNetwork}" ToolTip="Search" DockPanel.Dock="Right"/>
+                    <Button Command="{Binding BtnGetIP}" CommandParameter="{Binding Path=.}" Content="{materialDesign:PackIcon IpNetwork}" ToolTip="Search" DockPanel.Dock="Right"/>
                     <Grid Width="170" DockPanel.Dock="Left">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -71,7 +71,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="3" TextAlignment="Center" Grid.Column="0">
+                        <TextBox Text="{Binding IP1}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="3" TextAlignment="Center" Grid.Column="0">
                             <materialDesign:HintAssist.Hint>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Ip" />
@@ -80,17 +80,17 @@
                             </materialDesign:HintAssist.Hint>
                         </TextBox>
                         <TextBlock Grid.Column="1" Text="." VerticalAlignment="Bottom"/>
-                        <TextBox VerticalAlignment="Bottom" Grid.Column="2" Text="192" MaxLength="3" TextAlignment="Center"/>
+                        <TextBox Text="{Binding IP2}" VerticalAlignment="Bottom" Grid.Column="2" MaxLength="3" TextAlignment="Center"/>
                         <TextBlock Grid.Column="3" Text="." VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                        <TextBox VerticalAlignment="Bottom" Grid.Column="4" Text="192" MaxLength="3" TextAlignment="Center"/>
+                        <TextBox Text="{Binding IP3}" VerticalAlignment="Bottom" Grid.Column="4" MaxLength="3" TextAlignment="Center"/>
                         <TextBlock Grid.Column="5" Text="." VerticalAlignment="Bottom"/>
-                        <TextBox VerticalAlignment="Bottom" Grid.Column="6" Text="192" MaxLength="3" TextAlignment="Center"/>
+                        <TextBox Text="{Binding IP4}" VerticalAlignment="Bottom" Grid.Column="6" MaxLength="3" TextAlignment="Center"/>
                     </Grid>
                     <Grid/>
                 </DockPanel>
                 <DockPanel Margin="0 0 8 8" DockPanel.Dock="Top">
-                    <Button Content="{materialDesign:PackIcon Magnify}" ToolTip="Search" DockPanel.Dock="Right"/>
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" IsReadOnly="True">
+                    <Button Command="{Binding BtnGetGroup}" CommandParameter="{Binding Path=.}" Content="{materialDesign:PackIcon Magnify}" ToolTip="Search" DockPanel.Dock="Right"/>
+                    <TextBox Text="{Binding GroupId}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:TextFieldAssist.HasClearButton="True" IsReadOnly="True">
                         <materialDesign:HintAssist.Hint>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="AccountGroup" />
@@ -99,7 +99,7 @@
                         </materialDesign:HintAssist.Hint>
                     </TextBox>
                 </DockPanel>
-                <Button DockPanel.Dock="Bottom" Content="Save" Margin="0 0 8 0"/>
+                <Button Command="{Binding BtnSave}" CommandParameter="{Binding Path=.}" DockPanel.Dock="Bottom" Content="Save" Margin="0 0 8 0"/>
                 <Grid/>
             </DockPanel>
         </GroupBox>
@@ -108,14 +108,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ListView ItemsSource="{Binding Items1}" Grid.Row="0">
+            <ListView x:Name="Items" ItemsSource="{Binding Items}" SelectionChanged="Items_SelectionChanged"  Grid.Row="0">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Code}" Header="ID" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Cd}" Header="ID" />
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
                         <GridViewColumn DisplayMemberBinding="{Binding Group}" Header="Group" />
+                        <GridViewColumn DisplayMemberBinding="{Binding IP}" Header="IP" />
                         <GridViewColumn DisplayMemberBinding="{Binding Delete}" Header="Delete" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -126,8 +126,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Content="File Replace" Command="{Binding FileReplace}" CommandParameter="{Binding Path=.}" Margin="0 0 4 0"/>
-                <Button Content="File Add" Margin="0 0 4 0" Grid.Column="1"/>
-                <Button Content="File Out" Grid.Column="2" Margin="4 0 0 0"/>
+                <Button Content="File Add" Command="{Binding BtnFileAdd}" CommandParameter="{Binding Path=.}" Margin="0 0 4 0" Grid.Column="1"/>
+                <Button Content="File Out" Command="{Binding BtnFileOut}" CommandParameter="{Binding Path=.}" Grid.Column="2" Margin="4 0 0 0"/>
             </Grid>
         </Grid>
     </DockPanel>

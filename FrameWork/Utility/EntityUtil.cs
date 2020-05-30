@@ -1,11 +1,16 @@
 ﻿using FrameWork.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
+using MySql.Data.EntityFrameworkCore.Extensions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 
 namespace Kebin1.Utils
@@ -195,9 +200,18 @@ namespace Kebin1.Utils
         /// <param name="sql"></param>
         /// <param name="paramArray"></param>
         /// <returns></returns>
-        public List<T> FindAll<T>(string sql) where T : class
-            => _db.Set<T>().FromSqlRaw(sql).ToList();
+        //public List<T> FindAll<T>(string sql) where T : class
+        //    => _db.Set<T>().FromSqlRaw(sql).ToList();
 
+        /// <summary>
+        /// SQLで複数検索(NoTrack)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="paramArray"></param>
+        /// <returns></returns>
+        public List<T> FindAll<T>(string sql) where T : class, new()
+            => _db.Database.SqlQuery<T>(sql).ToList();
 
         /// <summary>
         /// SQLで複数検索(NoTrack)
@@ -365,6 +379,33 @@ namespace Kebin1.Utils
         /// <typeparam name="T"></typeparam>
         /// <param name="model"></param>
         /// <returns></returns>
+        public int DeleteAll(string sql)
+        {
+            //_db.Database.ExecuteSqlInterpolated(sql);
+            var con = _db.Database.GetDbConnection();
+            int result;
+            try
+            {
+                con.Open();
+                using (var com = con.CreateCommand())
+                {
+                    com.CommandText = sql;
+                    result = com.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 削除
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public int Delete<T>(T model) where T : class
             => TryCatchUpdateConcurrencyException(()
                 => _db.Entry<T>(model).State = EntityState.Deleted);
@@ -436,6 +477,71 @@ namespace Kebin1.Utils
 
         public static List<T> Clone<T>(this List<T> list) where T : ICloneable
             => list.Select(x => (T)x.Clone()).ToList();
+
+        #region SqlQuery
+        public static IEnumerable<T> SqlQuery<T>(this DatabaseFacade facade, string sql, params object[] parameters) where T : class, new()
+        {
+            DataTable dt = SqlQuery(facade, sql, parameters);
+            return dt.ToEnumerable<T>();
+        }
+
+        public static IEnumerable<T> ToEnumerable<T>(this DataTable dt) where T : class, new()
+        {
+            PropertyInfo[] propertyInfos = typeof(T).GetProperties();
+            T[] ts = new T[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                T t = new T();
+                foreach (PropertyInfo p in propertyInfos)
+                {
+                    if (dt.Columns.IndexOf(p.Name) != -1 && row[p.Name] != DBNull.Value)
+                        p.SetValue(t, row[p.Name], null);
+                }
+                ts[i] = t;
+                i++;
+            }
+            return ts;
+        }
+
+        public static DataTable SqlQuery(this DatabaseFacade facade, string sql, params object[] parameters)
+        {
+            DbCommand cmd = CreateCommand(facade, sql, out DbConnection conn, parameters);
+            DbDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            reader.Close();
+            conn.Close();
+            return dt;
+        }
+
+        private static DbCommand CreateCommand(DatabaseFacade facade, string sql, out DbConnection dbConn, params object[] parameters)
+        {
+            DbConnection conn = facade.GetDbConnection();
+            dbConn = conn;
+            conn.Open();
+            DbCommand cmd = conn.CreateCommand();
+            if (facade.IsMySql())
+            {
+                cmd.CommandText = sql;
+                CombineParams(ref cmd, parameters);
+            }
+            return cmd;
+        }
+
+        private static void CombineParams(ref DbCommand command, params object[] parameters)
+        {
+            if (parameters != null)
+            {
+                foreach (MySqlParameter parameter in parameters)
+                {
+                    if (!parameter.ParameterName.Contains("@"))
+                        parameter.ParameterName = $"@{parameter.ParameterName}";
+                    command.Parameters.Add(parameter);
+                }
+            }
+        }
+        #endregion
     }
 
     public class EntityBuilder

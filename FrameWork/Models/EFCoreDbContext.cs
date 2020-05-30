@@ -34,7 +34,8 @@ namespace FrameWork.Models
             optionsBuilder.UseMySQL("Server=localhost;database=ysdb;uid=root;password=123456");
         }
 
-        public virtual DbSet<TB_User> TB_User { get; set; } 
+        public virtual DbSet<TB_User> TB_User { get; set; }
+        public virtual DbSet<TB_Type> TB_Type { get; set; }
 
         //private readonly string _connectionString;
 

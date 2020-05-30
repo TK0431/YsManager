@@ -1,4 +1,5 @@
-﻿using FrameWork.Models;
+﻿using FrameWork.Consts;
+using FrameWork.Models;
 using Kebin1.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,8 @@ namespace YsTool
             //IServiceCollection services = new ServiceCollection().AddSingleton(contextOptions).AddScoped<EFCoreDbContext>();
 
             //services.BuildServiceProvider();
+
+            UpdateEnum.Update();
 
             Language = string.Empty;
             try

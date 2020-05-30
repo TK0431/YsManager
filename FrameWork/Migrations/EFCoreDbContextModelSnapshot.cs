@@ -17,6 +17,50 @@ namespace FrameWork.Migrations
                 .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("FrameWork.Models.DB.TB_Type", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("DelFlg")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("InserteTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("InserterCd")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("varchar(2)")
+                        .HasMaxLength(2);
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("UpdaterCd")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("varchar(2)")
+                        .HasMaxLength(2);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tb_type");
+                });
+
             modelBuilder.Entity("FrameWork.Models.DB.TB_User", b =>
                 {
                     b.Property<int>("Id")
