@@ -76,6 +76,18 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </Expander>
+                    <Expander x:Name="codHlp" HorizontalAlignment="Stretch" Header="Code Help" DockPanel.Dock="Top">
+                        <ListBox Margin="16" ItemsSource="{Binding CodItems}" PreviewMouseLeftButtonUp="MenuList_PreviewMouseLeftButtonUp">
+                            <ListBox.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                            </ListBox.Resources>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Text="{Binding Description}" Margin="32 0 32 0" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Expander>
                     <Grid/>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>

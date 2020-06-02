@@ -34,6 +34,11 @@ namespace YsTool.ViewModels
         public ObservableCollection<EnumItem> WebItems { get; set; }
 
         /// <summary>
+        /// Web 菜单
+        /// </summary>
+        public ObservableCollection<EnumItem> CodItems { get; set; }
+
+        /// <summary>
         /// 构造
         /// </summary>
         public MainWindowViewModel()
@@ -56,6 +61,12 @@ namespace YsTool.ViewModels
             {
                 PageEnum.UI201.GetItem(), //
                 PageEnum.UI202.GetItem(), //
+            };
+            // Code 菜单
+            CodItems = new ObservableCollection<EnumItem>()
+            {
+                PageEnum.UI902.GetItem(), //
+                PageEnum.UI903.GetItem(), //
             };
         }
     }

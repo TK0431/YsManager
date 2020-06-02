@@ -4,4 +4,7 @@
   <app>
     <language>0</language>
   </app>
+  <UI902 name="file" value="abc"/>
+  <UI902 name="reverse" value="True"/>
+  <UI902 name="language" value="C#"/>
 </setting>

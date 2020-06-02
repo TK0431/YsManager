@@ -24,6 +24,10 @@ namespace YsTool.Consts
         UI201,
         [Description("Web Test"), Value("Pages/UI202.xaml")]
         UI202,
+        [Description("Model Help"), Value("Pages/UI902.xaml")]
+        UI902,
+        [Description("Code Add"), Value("Pages/UI903.xaml")]
+        UI903,
     }
 
     /// <summary>

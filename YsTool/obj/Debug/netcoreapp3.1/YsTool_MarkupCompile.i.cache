@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 E:\GitHub\YsManager\YsTool\App.xaml
-12923037372
+14-418482185
 
-281616753039
+34-1527765772
 234508624683
-MainWindow.xaml;Pages\UI000.xaml;Pages\UI001.xaml;Pages\UI002.xaml;Pages\UI003.xaml;Pages\UI101.xaml;Pages\UI102.xaml;Pages\UI201.xaml;Pages\UI202.xaml;Styles\Com.xaml;Styles\en-us.xaml;Styles\zh-cn.xaml;
+MainWindow.xaml;Pages\UI000.xaml;Pages\UI001.xaml;Pages\UI002.xaml;Pages\UI003.xaml;Pages\UI101.xaml;Pages\UI102.xaml;Pages\UI201.xaml;Pages\UI202.xaml;Pages\UI902.xaml;Pages\UI903.xaml;Styles\Com.xaml;Styles\en-us.xaml;Styles\zh-cn.xaml;
 
-True
+False
 

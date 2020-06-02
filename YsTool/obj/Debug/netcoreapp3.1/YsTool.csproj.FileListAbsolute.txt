@@ -87,3 +87,7 @@ E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.
 E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.csproj.CoreCompileInputs.cache
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\YsTool.csproj.Fody.CopyLocal.cache
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI902.g.cs
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI902.baml
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI903.g.cs
+E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI903.baml

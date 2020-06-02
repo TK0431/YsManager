@@ -32,7 +32,7 @@ namespace YsTool
 
             //services.BuildServiceProvider();
 
-            UpdateEnum.Update();
+            // UpdateEnum.Update();
 
             Language = string.Empty;
             try

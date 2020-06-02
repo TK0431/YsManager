@@ -28,6 +28,12 @@
     <Compile Update="Pages\UI201.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\UI903.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\UI902.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\UI202.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +59,12 @@
 
   <ItemGroup>
     <Page Update="Pages\UI201.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UI903.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UI902.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UI202.xaml">

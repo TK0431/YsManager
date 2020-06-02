@@ -32,6 +32,8 @@ namespace FrameWork.Consts
     {
         [Value("01"), Description("权限")]
         Type_01,
+        [Value("02"), Description("开发语言")]
+        Type_02,
     }
 
     /// <summary>
@@ -40,17 +42,36 @@ namespace FrameWork.Consts
     public enum EnumLevel
     {
         [Value("0"), Description("")]
-        LEVEL0_0,
+        LEVEL_0,
         [Value("1"), Description("组员")]
-        LEVEL0_1,
+        LEVEL_1,
         [Value("2"), Description("组长")]
-        LEVEL0_2,
+        LEVEL_2,
         [Value("3"), Description("项目负责人")]
-        LEVEL0_3,
+        LEVEL_3,
         [Value("4"), Description("项目经理")]
-        LEVEL0_4,
+        LEVEL_4,
         [Value("9"), Description("超级")]
-        LEVEL0_9,
+        LEVEL_9,
+    }
+
+    /// <summary>
+    /// 开发语言
+    /// </summary>
+    public enum EnumDevLang
+    {
+        [Value("0"), Description("")]
+        ALL,
+        [Value("1"), Description("C#")]
+        CSHUP,
+        [Value("2"), Description("JAVA")]
+        JAVA,
+        [Value("3"), Description("Python")]
+        PYTHON,
+        [Value("4"), Description("C")]
+        C,
+        [Value("5"), Description("C++")]
+        CPLUS,
     }
 
     /// <summary>

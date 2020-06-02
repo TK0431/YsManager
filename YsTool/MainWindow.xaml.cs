@@ -1,14 +1,8 @@
 ﻿using FrameWork.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Xml.Linq;
 using YsTool.Consts;
 using YsTool.Pages;
-using YsTool.Utility;
 using YsTool.ViewModels;
 
 namespace YsTool
@@ -73,6 +67,12 @@ namespace YsTool
                         break;
                     case PageEnum.UI202:
                         _viewModel.MainPage = new UI202();
+                        break;
+                    case PageEnum.UI902:
+                        _viewModel.MainPage = new UI902();
+                        break;
+                    case PageEnum.UI903:
+                        _viewModel.MainPage = new UI903();
                         break;
                     default:
                         break;

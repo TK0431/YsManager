@@ -1,5 +1,5 @@
-﻿using Kebin1.Utils;
-using PropertyChanged;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,6 +10,8 @@ namespace YsTool.ViewModels.Base
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public PageEnum Page => (PageEnum)Enum.Parse(typeof(PageEnum), this.GetType().Name.Substring(0, 5));
+
         /// <summary>
         /// 语言
         /// </summary>
