@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +34,21 @@ namespace YsTool
             //services.BuildServiceProvider();
 
             // UpdateEnum.Update();
+            try
+            {
+                FileStream a = new FileStream("aaa.pdf",FileMode.Create);
+                using (ExcelUtility excel = new ExcelUtility(@"E:\Template.xlsx"))
+                {
+                    excel.SaveAs(a);
+                }
 
+                //FileStream a = new FileStream(, FileMode.Open,FileAccess.ReadWrite,FileShare.ReadWrite);
+                PdfUtiliity.ExcelToPdf(a, @"E:\sample.pdf");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             Language = string.Empty;
             try
             {

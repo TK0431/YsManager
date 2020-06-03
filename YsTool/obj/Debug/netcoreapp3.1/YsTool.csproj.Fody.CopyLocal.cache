@@ -1,5 +1,8 @@
 C:\Users\dhc\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll
 C:\Users\dhc\.nuget\packages\epplus\5.1.2\lib\netstandard2.1\EPPlus.dll
+C:\Users\dhc\.nuget\packages\freespire.xls\10.1.0\lib\netcoreapp3.0\Spire.License.dll
+C:\Users\dhc\.nuget\packages\freespire.xls\10.1.0\lib\netcoreapp3.0\Spire.Pdf.dll
+C:\Users\dhc\.nuget\packages\freespire.xls\10.1.0\lib\netcoreapp3.0\Spire.XLS.dll
 C:\Users\dhc\.nuget\packages\google.protobuf\3.6.1\lib\netstandard1.0\Google.Protobuf.dll
 C:\Users\dhc\.nuget\packages\k4os.compression.lz4\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.dll
 C:\Users\dhc\.nuget\packages\k4os.compression.lz4.streams\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll

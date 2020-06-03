@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DExmB0UlD0AI5+3glTbiqVgWONqgsx8MAM2LJ7HtqDY6Jc2Ct3w/xzIdrlo2bFxW4t1vs6A7MtMkdIeW5aQgQg==",
+  "dgSpecHash": "p/MFbpY1vKljnWSrE4KLk7MIfQUc9qVdKp/hLGHJSZ/looWmA9ib3JtZK7aiPoBiQrKdvrnZQ+ysQzFNtS8iBA==",
   "success": true,
   "projectFilePath": "E:\\GitHub\\YsManager\\YsTool\\YsTool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dhc\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\dhc\\.nuget\\packages\\epplus\\5.1.2\\epplus.5.1.2.nupkg.sha512",
     "C:\\Users\\dhc\\.nuget\\packages\\fody\\6.1.1\\fody.6.1.1.nupkg.sha512",
+    "C:\\Users\\dhc\\.nuget\\packages\\freespire.xls\\10.1.0\\freespire.xls.10.1.0.nupkg.sha512",
     "C:\\Users\\dhc\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
     "C:\\Users\\dhc\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\dhc\\.nuget\\packages\\k4os.compression.lz4.streams\\1.1.11\\k4os.compression.lz4.streams.1.1.11.nupkg.sha512",

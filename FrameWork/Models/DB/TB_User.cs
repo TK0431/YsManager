@@ -36,7 +36,7 @@ namespace FrameWork.Models.DB
         public void Configure(EntityTypeBuilder<TB_User> builder)
         {
             // 唯一索引
-            builder.HasIndex(p => p.Id).IsUnique();
+            builder.HasIndex(p => p.CD).IsUnique();
             builder.HasIndex(p => p.Name);
             builder.HasIndex(p => p.IP);
         }

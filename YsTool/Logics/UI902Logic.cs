@@ -66,7 +66,7 @@ namespace YsTool.Logics
         private void InsertSheetData(UI902ViewModel model)
         {
             _dic = new Dictionary<string, string>();
-            using ExcelUtil excel = new ExcelUtil(model.FileDictionary);
+            using ExcelUtility excel = new ExcelUtility(model.FileDictionary);
 
             ExcelWorksheet sheet = excel.GetSheet();
 

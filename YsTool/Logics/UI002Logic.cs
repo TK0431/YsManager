@@ -36,7 +36,7 @@ namespace YsTool.Logics
 
             if (file == null) return;
 
-            using ExcelUtil excel = new ExcelUtil(file);
+            using ExcelUtility excel = new ExcelUtility(file);
 
             ExcelWorksheet sheet = excel.GetSheet();
 

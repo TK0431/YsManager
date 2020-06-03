@@ -91,3 +91,6 @@ E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI902.g.cs
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI902.baml
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI903.g.cs
 E:\GitHub\YsManager\YsTool\obj\Debug\netcoreapp3.1\Pages\UI903.baml
+E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\Spire.License.dll
+E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\Spire.Pdf.dll
+E:\GitHub\YsManager\YsTool\bin\Debug\netcoreapp3.1\Spire.XLS.dll

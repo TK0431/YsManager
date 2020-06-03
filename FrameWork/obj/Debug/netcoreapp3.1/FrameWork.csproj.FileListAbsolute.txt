@@ -5,5 +5,5 @@ E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.AssemblyInfoInpu
 E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.AssemblyInfo.cs
 E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.dll
 E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.pdb
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.csprojAssemblyReference.cache
 E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.csproj.CoreCompileInputs.cache
+E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.csprojAssemblyReference.cache

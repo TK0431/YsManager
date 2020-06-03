@@ -38,6 +38,23 @@
           "lib/netstandard2.1/EPPlus.dll": {}
         }
       },
+      "FreeSpire.XLS/10.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Spire.License.dll": {},
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {},
+          "lib/netcoreapp3.0/Spire.XLS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Spire.License.dll": {},
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {},
+          "lib/netcoreapp3.0/Spire.XLS.dll": {}
+        }
+      },
       "Google.Protobuf/3.6.1": {
         "type": "package",
         "dependencies": {
@@ -2471,6 +2488,54 @@
         "lib/netstandard2.1/EPPlus.xml",
         "license.md",
         "readme.txt"
+      ]
+    },
+    "FreeSpire.XLS/10.1.0": {
+      "sha512": "CRWQGBXcyaHD8b88gqTrF/VNdG0ZRwPOn5922tLcWw8dvb27gpSo6PgSvwjDgc2NQ+muHDf1Av3AqF306NHLWw==",
+      "type": "package",
+      "path": "freespire.xls/10.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "freespire.xls.10.1.0.nupkg.sha512",
+        "freespire.xls.nuspec",
+        "lib/net20/Spire.License.dll",
+        "lib/net20/Spire.License.xml",
+        "lib/net20/Spire.Pdf.dll",
+        "lib/net20/Spire.Pdf.xml",
+        "lib/net20/Spire.XLS.dll",
+        "lib/net20/Spire.XLS.xml",
+        "lib/net40/Spire.License.dll",
+        "lib/net40/Spire.License.xml",
+        "lib/net40/Spire.Pdf.dll",
+        "lib/net40/Spire.Pdf.xml",
+        "lib/net40/Spire.XLS.dll",
+        "lib/net40/Spire.XLS.xml",
+        "lib/net46/Spire.License.dll",
+        "lib/net46/Spire.License.xml",
+        "lib/net46/Spire.Pdf.dll",
+        "lib/net46/Spire.Pdf.xml",
+        "lib/net46/Spire.XLS.dll",
+        "lib/net46/Spire.XLS.xml",
+        "lib/netcoreapp2.0/Spire.License.dll",
+        "lib/netcoreapp2.0/Spire.License.xml",
+        "lib/netcoreapp2.0/Spire.Pdf.dll",
+        "lib/netcoreapp2.0/Spire.Pdf.xml",
+        "lib/netcoreapp2.0/Spire.XLS.dll",
+        "lib/netcoreapp2.0/Spire.XLS.xml",
+        "lib/netcoreapp3.0/Spire.License.dll",
+        "lib/netcoreapp3.0/Spire.License.xml",
+        "lib/netcoreapp3.0/Spire.Pdf.dll",
+        "lib/netcoreapp3.0/Spire.Pdf.xml",
+        "lib/netcoreapp3.0/Spire.XLS.dll",
+        "lib/netcoreapp3.0/Spire.XLS.xml",
+        "lib/netstandard2.0/Spire.License.dll",
+        "lib/netstandard2.0/Spire.License.xml",
+        "lib/netstandard2.0/Spire.Pdf.dll",
+        "lib/netstandard2.0/Spire.Pdf.xml",
+        "lib/netstandard2.0/Spire.XLS.dll",
+        "lib/netstandard2.0/Spire.XLS.xml",
+        "license.txt"
       ]
     },
     "Google.Protobuf/3.6.1": {
@@ -8113,6 +8178,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "EPPlus >= 5.1.2",
+      "FreeSpire.XLS >= 10.1.0",
       "Microsoft.EntityFrameworkCore >= 3.1.4",
       "MySql.Data.EntityFrameworkCore >= 8.0.20",
       "log4net >= 2.0.8"
@@ -8158,6 +8224,10 @@
           "EPPlus": {
             "target": "Package",
             "version": "[5.1.2, )"
+          },
+          "FreeSpire.XLS": {
+            "target": "Package",
+            "version": "[10.1.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
