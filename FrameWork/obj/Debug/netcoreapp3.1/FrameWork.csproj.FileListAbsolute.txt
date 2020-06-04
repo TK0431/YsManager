@@ -1,9 +1,0 @@
-E:\GitHub\YsManager\FrameWork\bin\Debug\netcoreapp3.1\FrameWork.deps.json
-E:\GitHub\YsManager\FrameWork\bin\Debug\netcoreapp3.1\FrameWork.dll
-E:\GitHub\YsManager\FrameWork\bin\Debug\netcoreapp3.1\FrameWork.pdb
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.AssemblyInfoInputs.cache
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.AssemblyInfo.cs
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.dll
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.pdb
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.csproj.CoreCompileInputs.cache
-E:\GitHub\YsManager\FrameWork\obj\Debug\netcoreapp3.1\FrameWork.csprojAssemblyReference.cache
